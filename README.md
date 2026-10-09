@@ -1,4 +1,4 @@
-<p align="center"><img src="custom_components/catgenie/brand/icon@2x.png" width="160" alt="CatGenie"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/netadmindave/ha-catgenie/main/custom_components/catgenie/brand/icon%402x.png" width="160" alt="CatGenie"></p>
 
 # CatGenie for Home Assistant
 
