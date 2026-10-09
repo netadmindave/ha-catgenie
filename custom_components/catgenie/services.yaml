@@ -1,0 +1,45 @@
+set_schedule:
+  fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          integration: catgenie
+    times:
+      required: true
+      example: '["08:00", "14:00", "20:00"]'
+      selector:
+        object:
+    activate:
+      default: true
+      selector:
+        boolean:
+
+set_do_not_disturb:
+  fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          integration: catgenie
+    start:
+      required: true
+      selector:
+        time:
+    end:
+      required: true
+      selector:
+        time:
+
+set_configuration:
+  fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          integration: catgenie
+    configuration:
+      required: true
+      example: '{"catSense": 16}'
+      selector:
+        object:

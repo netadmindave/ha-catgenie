@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Simple cat face: solid head, features cut out as negative space. -->
+  <defs>
+    <mask id="features" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+      <rect width="512" height="512" fill="#fff"/>
+      <!-- eyes (cut out) with slit pupils (kept) -->
+      <path d="M134 282 Q176 232 218 282 Q176 330 134 282 Z" fill="#000"/>
+      <path d="M294 282 Q336 232 378 282 Q336 330 294 282 Z" fill="#000"/>
+      <ellipse cx="176" cy="282" rx="9" ry="30" fill="#fff"/>
+      <ellipse cx="336" cy="282" rx="9" ry="30" fill="#fff"/>
+      <!-- nose -->
+      <path d="M232 346 Q256 338 280 346 Q268 366 256 372 Q244 366 232 346 Z" fill="#000"/>
+      <!-- mouth -->
+      <path d="M256 372 Q252 400 222 402 M256 372 Q260 400 290 402" fill="none" stroke="#000"
+            stroke-width="11" stroke-linecap="round"/>
+      <!-- whiskers -->
+      <g fill="none" stroke="#000" stroke-width="9" stroke-linecap="round">
+        <path d="M196 362 L66 340"/>
+        <path d="M196 380 L62 388"/>
+        <path d="M316 362 L446 340"/>
+        <path d="M316 380 L450 388"/>
+      </g>
+    </mask>
+  </defs>
+  <g mask="url(#features)" fill="currentColor" stroke="currentColor" stroke-width="28" stroke-linejoin="round">
+    <!-- ears -->
+    <path d="M98 252 L104 66 L232 156 Z"/>
+    <path d="M414 252 L408 66 L280 156 Z"/>
+    <!-- head -->
+    <ellipse cx="256" cy="304" rx="196" ry="164" stroke="none"/>
+  </g>
+</svg>

@@ -1,0 +1,132 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sign in to CatGenie",
+        "description": "Uses the same SMS login as the CatGenie app. {detail}",
+        "data": {
+          "country_code": "Country calling code",
+          "phone": "Phone number"
+        },
+        "data_description": {
+          "country_code": "1 for the US and Canada.",
+          "phone": "The number registered in the CatGenie app."
+        }
+      },
+      "code": {
+        "title": "Enter SMS code",
+        "description": "A login code was sent to {phone}. {detail}",
+        "data": {
+          "code": "Code"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach the CatGenie cloud.",
+      "code_request_failed": "The CatGenie cloud refused to send a code.",
+      "invalid_code": "That code was not accepted."
+    },
+    "abort": {
+      "already_configured": "This CatGenie account is already configured.",
+      "reauth_successful": "Re-authentication successful.",
+      "wrong_account": "That phone number belongs to a different account than this entry."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "CatGenie options",
+        "data": {
+          "scan_interval": "Polling interval (seconds)"
+        },
+        "data_description": {
+          "scan_interval": "Polling speeds up to 10 s automatically while a cycle is running."
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "connected": { "name": "Connected" },
+      "cleaning": { "name": "Cleaning" },
+      "problem": { "name": "Problem" },
+      "sani_low": { "name": "SaniSolution low" }
+    },
+    "button": {
+      "start_cleaning": { "name": "Start cleaning" },
+      "start_special_cleaning": { "name": "Start special cycle" },
+      "pause_cleaning": { "name": "Pause" },
+      "resume_cleaning": { "name": "Resume" },
+      "cancel_cleaning": { "name": "Cancel cleaning" },
+      "refresh": { "name": "Refresh" }
+    },
+    "number": {
+      "volume": { "name": "Volume" },
+      "cat_delay": { "name": "Cat activation delay" },
+      "auto_lock": { "name": "Auto panel lock" }
+    },
+    "select": {
+      "cleaning_mode": {
+        "name": "Cleaning mode",
+        "state": {
+          "cat_activation": "Cat activation",
+          "time_activation": "Time activation",
+          "manual": "Manual"
+        }
+      }
+    },
+    "sensor": {
+      "status": {
+        "name": "Status",
+        "state": {
+          "idle": "Idle",
+          "cleaning": "Cleaning",
+          "paused": "Paused",
+          "cancelled": "Cancelled",
+          "special_cleaning": "Special cycle"
+        }
+      },
+      "progress": { "name": "Cycle progress" },
+      "sani_solution": { "name": "SaniSolution washes left" },
+      "last_clean": { "name": "Last clean" },
+      "errors": { "name": "Active errors" },
+      "schedule": { "name": "Schedule" },
+      "do_not_disturb": { "name": "Do not disturb" },
+      "raw_state": { "name": "Raw cloud data" }
+    },
+    "switch": {
+      "child_lock": { "name": "Panel lock" },
+      "extra_wash": { "name": "Extra wash" },
+      "extra_shake": { "name": "Extra shake" },
+      "extra_dry": { "name": "Extra dry" }
+    }
+  },
+  "services": {
+    "set_schedule": {
+      "name": "Set cleaning schedule",
+      "description": "Replaces the Time Activation schedule (local times, up to 8, at least 2 hours apart).",
+      "fields": {
+        "device_id": { "name": "CatGenie", "description": "The CatGenie to update." },
+        "times": { "name": "Times", "description": "List of local times, for example ['08:00', '20:00']." },
+        "activate": { "name": "Switch to Time Activation", "description": "Also switch the unit to Time Activation mode." }
+      }
+    },
+    "set_do_not_disturb": {
+      "name": "Set do-not-disturb window",
+      "description": "Cat Activation will not start a cycle in this window (local time, max 10 hours).",
+      "fields": {
+        "device_id": { "name": "CatGenie", "description": "The CatGenie to update." },
+        "start": { "name": "Start", "description": "Start of the quiet window." },
+        "end": { "name": "End", "description": "End of the quiet window." }
+      }
+    },
+    "set_configuration": {
+      "name": "Set raw configuration",
+      "description": "Merges keys into the device configuration and pushes it (advanced).",
+      "fields": {
+        "device_id": { "name": "CatGenie", "description": "The CatGenie to update." },
+        "configuration": { "name": "Configuration", "description": "Keys to merge into the configuration, for example catSense: 16." }
+      }
+    }
+  }
+}

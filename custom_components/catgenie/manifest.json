@@ -1,0 +1,14 @@
+{
+  "domain": "catgenie",
+  "name": "CatGenie",
+  "codeowners": ["@netadmindave"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/netadmindave/ha-catgenie",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/netadmindave/ha-catgenie/issues",
+  "loggers": ["custom_components.catgenie"],
+  "requirements": [],
+  "version": "0.2.0"
+}
